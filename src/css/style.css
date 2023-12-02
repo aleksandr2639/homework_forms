@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    font-family: "Roboto", "Arial", sans-serif;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    height: 100vh;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    background-color: #bc3547;
+    font-family: inherit;
+    font-size: 25px;
+    color: #ffffff;
+    border: solid 3px rgb(235, 171, 171);
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.button:hover {
+    background-color: #a02a3a;
+    cursor: pointer;
+}
+
+.popover-container {
+   visibility: hidden;
+   width: 400px;
+   position: absolute;
+   border: 1px solid #757171;
+   border-radius: 5px;
+   font-size: 20px;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.popover-container::after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    left: 50%;
+    background-color: #ffffff;
+    border-width: 1px;
+    border-color:#757171;
+    border-style: none solid solid none;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popover-title{
+    padding: 10px;
+    text-align: center;
+    background-color: #f0f4ff;
+}
+
+.popover-text{
+    padding: 10px;
+}
+
+.open{
+    visibility: visible;
+}
