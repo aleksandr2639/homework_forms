@@ -25,9 +25,16 @@ export default class Button {
 
   buttonClick() {
     const btn = this.container.querySelector('.button');
+    const tooltip = document.querySelector('.popover-container')
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      document.querySelector('.popover-container').classList.toggle('open');
+      tooltip.classList.toggle('open');
+      let target = e.target;
+      let cords = target.getBoundingClientRect();
+      let left = cords.left + (target.offsetWidth - tooltip.offsetWidth) / 2
+      let top = cords.top - tooltip.offsetHeight - 5
+      tooltip.style.left = left + 'px'
+      tooltip.style.top = top + 'px'
     });
   }
 
